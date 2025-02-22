@@ -32,7 +32,8 @@ body {
 }
 
 .letter {
-    width: 500px;
+    width: 90%; /* Makes it flexible */
+    max-width: 400px; /* Limits width on larger screens */
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -44,10 +45,37 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    text-align: left;
 }
 
+/* Open state */
 .letter.show {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(20px);
+}
+
+/* Responsive text */
+.letter h2 {
+    font-size: 1.5em;
+}
+
+.letter p {
+    font-size: 1em;
+}
+
+/* Adjust size for smaller screens */
+@media (max-width: 600px) {
+    .letter {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .letter h2 {
+        font-size: 1.2em;
+    }
+
+    .letter p {
+        font-size: 0.9em;
+    }
 }
